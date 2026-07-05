@@ -74,7 +74,7 @@ export default function Footer() {
 
             {/* Instagram */}
             <button
-              onClick={() => window.open("https://instagram.com", "_blank")}
+              onClick={() => window.open("https://www.instagram.com/atelier.marta.daniel", "_blank")}
               style={iconBtn("#E1306C")}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
@@ -84,7 +84,7 @@ export default function Footer() {
 
             {/* TikTok */}
             <button
-              onClick={() => window.open("https://tiktok.com", "_blank")}
+              onClick={() => window.open("https://www.tiktok.com/@ateliermartadaniel", "_blank")}
               style={iconBtn("#111")}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="white">

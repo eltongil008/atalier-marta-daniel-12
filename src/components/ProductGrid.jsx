@@ -9,16 +9,96 @@ import noiva2 from '../assets/noiva5.jpeg';
 import noiva3 from '../assets/noiva6.jpeg';
 
 const products = [
-  { id: 1, name: 'Vestido Casual', img: vestido1, category: 'Vestido', description: 'Vestido casual elegante',  },
-  { id: 2, name: 'Vestido Elegante', img: noiva1, category: 'Noiva', description: 'Vestido premium de noiva',  },
-  { id: 3, name: 'Vestido Diário', img: vestido2, category: 'Vestido', description: 'Conforto e estilo diário', },
-  { id: 4, name: 'Vestido Sofisticado', img: noiva2, category: 'Noiva', description: 'Alta qualidade premium',  },
-  { id: 5, name: 'Vestido Formal', img: vestido3, category: 'Vestido', description: 'Elegância para eventos',  },
-  { id: 6, name: 'Vestido Clássico', img: noiva3, category: 'Noiva', description: 'Clássico atemporal',   },
-  { id: 7, name: 'Vestido Luxo', img: vestido1, category: 'Vestido', description: 'Design moderno e luxuoso',  },
-  { id: 8, name: 'Vestido Festa', img: vestido2, category: 'Vestido', description: 'Ideal para festas e eventos', },
-  { id: 9, name: 'Vestido Premium', img: noiva1, category: 'Noiva', description: 'Alta costura premium',  },
-  { id: 10, name: 'Vestido Exclusivo', img: noiva2, category: 'Noiva', description: 'Peça única exclusiva', },
+  {
+    id: 1,
+    name: 'Vestido Casual',
+    img: vestido1,
+    category: 'Vestido',
+    description: 'Vestido casual elegante',
+    rating: 5,
+    price: "120"
+  },
+  {
+    id: 2,
+    name: 'Vestido Elegante',
+    img: noiva1,
+    category: 'Noiva',
+    description: 'Vestido premium de noiva',
+    rating: 4,
+    price: "250"
+  },
+  {
+    id: 3,
+    name: 'Vestido Diário',
+    img: vestido2,
+    category: 'Vestido',
+    description: 'Conforto e estilo diário',
+    rating: 5,
+    price: "90"
+  },
+  {
+    id: 4,
+    name: 'Vestido Sofisticado',
+    img: noiva2,
+    category: 'Noiva',
+    description: 'Alta qualidade premium',
+    rating: 5,
+    price: "300"
+  },
+  {
+    id: 5,
+    name: 'Vestido Formal',
+    img: vestido3,
+    category: 'Vestido',
+    description: 'Elegância para eventos',
+    rating: 4,
+    price: "180"
+  },
+  {
+    id: 6,
+    name: 'Vestido Clássico',
+    img: noiva3,
+    category: 'Noiva',
+    description: 'Clássico atemporal',
+    rating: 5,
+    price: "220"
+  },
+  {
+    id: 7,
+    name: 'Vestido Luxo',
+    img: vestido1,
+    category: 'Vestido',
+    description: 'Design moderno e luxuoso',
+    rating: 5,
+    price: "400"
+  },
+  {
+    id: 8,
+    name: 'Vestido Festa',
+    img: vestido2,
+    category: 'Vestido',
+    description: 'Ideal para festas e eventos',
+    rating: 4,
+    price: "150"
+  },
+  {
+    id: 9,
+    name: 'Vestido Premium',
+    img: noiva1,
+    category: 'Noiva',
+    description: 'Alta costura premium',
+    rating: 5,
+    price: "350"
+  },
+  {
+    id: 10,
+    name: 'Vestido Exclusivo',
+    img: noiva2,
+    category: 'Noiva',
+    description: 'Peça única exclusiva',
+    rating: 5,
+    price: "500"
+  },
 ];
 
 export default function ProductGrid({ onAddToCart, selectedCategory, searchTerm }) {
@@ -39,7 +119,6 @@ export default function ProductGrid({ onAddToCart, selectedCategory, searchTerm 
     return byCategory && bySearch;
   });
 
-  // 🎯 movimento suave de luz
   const handleMove = (e, el) => {
     const rect = el.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -51,7 +130,6 @@ export default function ProductGrid({ onAddToCart, selectedCategory, searchTerm 
 
   return (
     <>
-      {/* GRID ULTRA PREMIUM */}
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
@@ -76,7 +154,6 @@ export default function ProductGrid({ onAddToCart, selectedCategory, searchTerm 
               overflow: 'hidden',
               transition: 'all 0.25s ease',
               boxShadow: '0 10px 30px rgba(0,0,0,0.06)',
-              transformStyle: 'preserve-3d'
             }}
             onMouseEnter={e => {
               e.currentTarget.style.transform = "translateY(-10px) scale(1.03)";
@@ -88,16 +165,13 @@ export default function ProductGrid({ onAddToCart, selectedCategory, searchTerm 
             }}
           >
 
-            {/* ✨ luz dinâmica que segue o mouse */}
             <div style={{
               position: 'absolute',
               inset: 0,
               background: 'radial-gradient(circle at var(--x) var(--y), rgba(198,146,30,0.18), transparent 40%)',
               pointerEvents: 'none',
-              transition: '0.1s'
             }} />
 
-            {/* imagem com sensação 3D */}
             <div style={{
               height: '180px',
               display: 'flex',
@@ -111,7 +185,6 @@ export default function ProductGrid({ onAddToCart, selectedCategory, searchTerm 
                   maxWidth: '100%',
                   objectFit: 'contain',
                   filter: 'drop-shadow(0 15px 20px rgba(0,0,0,0.2))',
-                  transition: '0.4s ease',
                 }}
               />
             </div>
@@ -119,23 +192,44 @@ export default function ProductGrid({ onAddToCart, selectedCategory, searchTerm 
             <h4 style={{
               fontSize: '14px',
               fontWeight: '600',
-              color: '#1d1d1f',
+              textAlign: 'center',
               marginTop: '10px'
             }}>
               {p.name}
             </h4>
 
+            <div style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "2px",
+              marginTop: "6px",
+              marginBottom: "8px",
+              fontSize: "15px"
+            }}>
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span
+                  key={star}
+                  style={{
+                    color: star <= p.rating ? "#FFD700" : "#d9d9d9",
+                  }}
+                >
+                  ★
+                </span>
+              ))}
+            </div>
+
             <strong style={{
+              display: "block",
+              textAlign: "center",
               fontSize: '15px',
               color: '#C6921E'
             }}>
-              {p.price}
+              ${p.price}
             </strong>
           </div>
         ))}
       </div>
 
-      {/* MODAL CINEMATOGRÁFICO */}
       {selectedProduct && (
         <div
           onClick={() => setSelectedProduct(null)}
@@ -146,47 +240,52 @@ export default function ProductGrid({ onAddToCart, selectedCategory, searchTerm 
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            backdropFilter: 'blur(10px)',
             zIndex: 9999
           }}
         >
           <div
             onClick={e => e.stopPropagation()}
             style={{
-              background: 'rgba(255,255,255,0.98)',
+              background: '#fff',
               padding: '24px',
               borderRadius: '22px',
-              width: '92%',
+              width: '90%',
               maxWidth: '450px',
-              textAlign: 'center',
-              animation: 'floatIn 0.4s ease',
-              boxShadow: '0 30px 80px rgba(0,0,0,0.25)'
+              textAlign: 'center'
             }}
           >
 
-            <img
-              src={selectedProduct.img}
-              style={{
-                width: '100%',
-                borderRadius: '14px',
-                maxHeight: '300px',
-                objectFit: 'contain',
-                background: '#f6f6f6',
-                padding: '10px'
-              }}
-            />
+            {/* IMAGEM CENTRALIZADA CORRIGIDA */}
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%',
+              padding: '10px',
+              background: '#fafafa',
+              borderRadius: '14px'
+            }}>
+              <img
+                src={selectedProduct.img}
+                style={{
+                  maxWidth: '100%',
+                  maxHeight: '320px',
+                  objectFit: 'contain',
+                  borderRadius: '12px',
+                  display: 'block'
+                }}
+              />
+            </div>
 
-            <h2 style={{ marginTop: 12 }}>
-              {selectedProduct.name}
-            </h2>
+            <h2>{selectedProduct.name}</h2>
 
-            <strong style={{ color: '#C6921E', fontSize: 18 }}>
-              {selectedProduct.price}
+            <strong style={{ color: '#C6921E' }}>
+              ${selectedProduct.price}
             </strong>
 
             <button
               onClick={() => {
-                onAddToCart(selectedProduct);
+                onAddToCart?.(selectedProduct);
                 setSelectedProduct(null);
               }}
               style={{
@@ -194,10 +293,9 @@ export default function ProductGrid({ onAddToCart, selectedCategory, searchTerm 
                 marginTop: '14px',
                 padding: '12px',
                 borderRadius: '12px',
-                border: 'none',
-                background: 'linear-gradient(135deg,#0071e3,#005bb5)',
+                background: '#0071e3',
                 color: '#fff',
-                fontWeight: 600
+                border: 'none'
               }}
             >
               Adicionar ao Carrinho
@@ -205,32 +303,26 @@ export default function ProductGrid({ onAddToCart, selectedCategory, searchTerm 
 
             <button
               onClick={() => {
-                navigate("/checkout", { state: { items: [selectedProduct] } });
+                navigate("/checkout", {
+                  state: { items: [selectedProduct] }
+                });
               }}
               style={{
                 width: '100%',
                 marginTop: '10px',
                 padding: '12px',
                 borderRadius: '12px',
-                border: 'none',
-                background: 'linear-gradient(135deg,#34c759,#28a745)',
+                background: '#28a745',
                 color: '#fff',
-                fontWeight: 600
+                border: 'none'
               }}
             >
               Finalizar Compra
             </button>
+
           </div>
         </div>
       )}
-
-      {/* animação premium */}
-      <style>{`
-        @keyframes floatIn {
-          from { transform: translateY(40px) scale(0.9); opacity: 0; }
-          to { transform: translateY(0) scale(1); opacity: 1; }
-        }
-      `}</style>
     </>
   );
 }
